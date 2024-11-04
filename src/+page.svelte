@@ -300,7 +300,10 @@
 <div class="mt-6">
 	For the mathematically-inclined readers: the temperature at the top of the page is produced from a
 	piecewise linear function that linearly interpolates the annual temperature projections of the
-	IPCC's 6th Assessment Report's median model.
+	IPCC's 6th Assessment Report's median model. <Link
+		href="https://github.com/aaronstanek/global-temperature-clock"
+		>Read the source code for this page</Link
+	>.
 </div>
 
 <div class="mt-6">
