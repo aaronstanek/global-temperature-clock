@@ -5,7 +5,7 @@
 	import BigTemperatureDigit from './big-temperature-digit.svelte';
 
 	let intervalTimerId: number | undefined;
-	let currentTemperature = 0;
+	let currentTemperature = $state(0);
 
 	onMount(() => {
 		const model = PiecewiseLinearModel();
@@ -30,7 +30,7 @@
 		return `${whole}.${fraction.slice(0, 9)}`;
 	};
 
-	$: formattedTemperature = formatTemperature(currentTemperature);
+	let formattedTemperature = $derived(formatTemperature(currentTemperature));
 </script>
 
 <div class="text-center intro line-1">Since the Industrial Revolution,</div>

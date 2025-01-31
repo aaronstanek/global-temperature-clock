@@ -1,9 +1,13 @@
 <script lang="ts">
-	export let value: string;
-	let topValue = ' ';
-	let bottomValue = ' ';
+	interface Props {
+		value: string;
+	}
 
-	let mover: HTMLDivElement | undefined;
+	let { value }: Props = $props();
+	let topValue = $state(' ');
+	let bottomValue = $state(' ');
+
+	let mover: HTMLDivElement | undefined = $state();
 
 	const move = (next: string) => {
 		topValue = bottomValue;
@@ -16,7 +20,9 @@
 		}, 0);
 	};
 
-	$: move(value);
+	$effect(() => {
+		move(value);
+	});
 </script>
 
 <div class="fixed-height">

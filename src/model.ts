@@ -16,7 +16,7 @@ const getLinearModelParameters = (currentTimeUnixMs: number): LinearModelParamet
 	let smallIndex = 0;
 	let bigIndex = rawData.length - 1;
 	while (bigIndex - smallIndex > 1) {
-		let middleIndex = Math.trunc((smallIndex + bigIndex) / 2);
+		const middleIndex = Math.trunc((smallIndex + bigIndex) / 2);
 		if (currentTimeUnixMs >= getUnixMsForYear(rawData[middleIndex][0])) {
 			smallIndex = middleIndex;
 		} else {
